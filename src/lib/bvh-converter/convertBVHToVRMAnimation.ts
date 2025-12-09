@@ -4,6 +4,7 @@ import { BVH } from "three/examples/jsm/loaders/BVHLoader";
 import { getRootBone } from "./getRootBone";
 import { mapSkeletonToVRM } from "./mapSkeletonToVRM";
 import { VRMAnimationExporterPlugin } from "./VRMAnimationExporterPlugin";
+import { exportVRMA } from "./exportVRMA";
 
 const _v3A = new THREE.Vector3();
 
@@ -93,10 +94,12 @@ export async function convertBVHToVRMAnimation(
   }
 
 
-  // export as a gltf
+  if (typeof window === 'undefined') {
+    return exportVRMA(rootBone, clip, vrmBoneMap);
+  }
+
   const exporter = new GLTFExporter();
   exporter.register((writer) => new VRMAnimationExporterPlugin(writer));
-
   const gltf = await exporter.parseAsync(rootBone, {
     animations: [clip],
     binary: true,

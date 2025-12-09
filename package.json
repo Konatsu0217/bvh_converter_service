@@ -7,7 +7,13 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "export": "next export"
+    "export": "next export",
+    "serve": "node start-server.js",
+    "serve:dev": "node start-server.js --dev",
+    "serve:sh": "bash start-server.sh",
+    "serve:dev:sh": "bash start-server.sh --dev",
+    "serve:api": "node api-server.js --prod",
+    "serve:api:dev": "node api-server.js --dev"
   },
   "dependencies": {
     "@charcoal-ui/icons": "^3.1.1",
