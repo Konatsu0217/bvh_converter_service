@@ -1,3 +1,10 @@
+============================== Notice ====================================
+1. please go [bvh2vrma](https://github.com/vrm-c/bvh2vrma) to find more detail.
+2. this repo is modified from original repo ⬆️，I just make it work like a backend service
+3. this repo is just use as a submodule for my own repo.
+============================== Notice ====================================
+
+
 # bvh to VRMA
 
 このリポジトリは bvh ファイルを VRMアニメーション ファイルに変換する web アプリケーションのリポジトリです。
